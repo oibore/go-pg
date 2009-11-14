@@ -1,0 +1,6 @@
+PostgreSQL pkg for golang
+
+$ cd ./src
+$ make
+$ ./runner
+
