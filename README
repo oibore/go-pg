@@ -1,6 +1,11 @@
-PostgreSQL pkg for golang
+PostgreSQL bindings for golang
 
 $ cd ./src
 $ make
 $ ./runner
+
+Read runner.go
+
+--
+oibore
 
