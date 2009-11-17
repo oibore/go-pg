@@ -1,4 +1,8 @@
-* 0.0.1  2009/11/15  oibore
+* 0.0.3  2009/11/17  oibore
+  implemented GetLength(), FName(), FNumber(), FType(), FSize(), FMod().
+
+* 0.0.2  2009/11/15  oibore
+  add type PgResults, and return by pg.Exec().
   add type PgResults, and return by pg.Exec().
   GetIsNull() return bool.
   implemented FetchRow().

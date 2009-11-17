@@ -1,10 +1,14 @@
 PostgreSQL bindings for golang
 
-$ cd ./src
-$ make
-$ ./runner
+This module is PostgreSQL bindings for golang. It is near compatible in CPAN Pg module.
 
-Read runner.go
+o INSTALL
+  $ cd ./src
+  $ make
+  $ ./runner
+
+o SAMPLE OF USAGE
+  src/runner.go
 
 --
 oibore

@@ -1,3 +1,6 @@
+//
+// pg.go
+//
 package pg
 
 // #include "pg_wrapper.h"
@@ -54,9 +57,33 @@ func GetIsNull(res *PgResults, row_number int, column_number int) bool {
 }
 
 func GetValue(res *PgResults, row_number int, column_number int) string {
-    value := C.GoString(C.PgGetValue(res.result, _C_int(row_number), 
-                                                 _C_int(column_number)));
-    return value;
+    return C.GoString(C.PgGetValue(res.result, _C_int(row_number), 
+                                               _C_int(column_number)));
+}
+
+func GetLength(res *PgResults, row_number int, column_number int) int {
+    return int(C.PgGetLength(res.result, _C_int(row_number), 
+                                         _C_int(column_number)));
+}
+
+func FName(res *PgResults, column_number int) string {
+    return C.GoString(C.PgFName(res.result, _C_int(column_number)));
+}
+
+func FNumber(res *PgResults, column_name string) int {
+    return int(C.PgFNumber(res.result, C.CString(column_name)));
+}
+
+func FType(res *PgResults, column_number int) int {
+    return int(C.PgFType(res.result, _C_int(column_number)));
+}
+
+func FSize(res *PgResults, column_number int) int {
+    return int(C.PgFSize(res.result, _C_int(column_number)));
+}
+
+func FMod(res *PgResults, column_number int) int {
+    return int(C.PgFMod(res.result, _C_int(column_number)));
 }
 
 func FetchRow(res *PgResults) []string {
